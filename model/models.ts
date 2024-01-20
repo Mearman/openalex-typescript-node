@@ -1,6 +1,5 @@
 import localVarRequest from 'request';
 
-export * from './affiliationsInner';
 export * from './apc';
 export * from './associatedInstitution';
 export * from './author';
@@ -59,7 +58,6 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
-import { AffiliationsInner } from './affiliationsInner';
 import { Apc } from './apc';
 import { AssociatedInstitution } from './associatedInstitution';
 import { Author } from './author';
@@ -121,7 +119,6 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
-    "AffiliationsInner": AffiliationsInner,
     "Apc": Apc,
     "AssociatedInstitution": AssociatedInstitution,
     "Author": Author,

@@ -11,13 +11,12 @@
  */
 
 import { RequestFile } from './models';
-import { AffiliationsInner } from './affiliationsInner';
 import { DehydratedInstitution } from './dehydratedInstitution';
 import { Ids } from './ids';
 import { SummaryStats } from './summaryStats';
 
 export class Author {
-    'affiliations'?: Array<AffiliationsInner>;
+    'affiliations'?: any | null;
     'citedByCount'?: any | null;
     'countsByYear'?: any | null;
     'createdDate'?: any | null;
@@ -40,7 +39,7 @@ export class Author {
         {
             "name": "affiliations",
             "baseName": "affiliations",
-            "type": "Array<AffiliationsInner>"
+            "type": "any"
         },
         {
             "name": "citedByCount",

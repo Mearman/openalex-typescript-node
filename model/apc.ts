@@ -13,10 +13,10 @@
 import { RequestFile } from './models';
 
 export class Apc {
-    'currency': string;
-    'provenance': string;
-    'value': number;
-    'valueUsd': number;
+    'currency': any | null;
+    'provenance': any | null;
+    'value': any | null;
+    'valueUsd': any | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -24,22 +24,22 @@ export class Apc {
         {
             "name": "currency",
             "baseName": "currency",
-            "type": "string"
+            "type": "any"
         },
         {
             "name": "provenance",
             "baseName": "provenance",
-            "type": "string"
+            "type": "any"
         },
         {
             "name": "value",
             "baseName": "value",
-            "type": "number"
+            "type": "any"
         },
         {
             "name": "valueUsd",
             "baseName": "value_usd",
-            "type": "number"
+            "type": "any"
         }    ];
 
     static getAttributeTypeMap() {

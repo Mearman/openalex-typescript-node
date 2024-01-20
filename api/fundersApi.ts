@@ -171,7 +171,7 @@ export class FundersApi {
      * @param userAgent [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool)
      * @param mailto The API is the primary way to get OpenAlex data. It\&#39;s free and requires no authentication. The daily limit for API calls is 100,000 requests per user per day. For best performance, add your email to all API requests The email can be either in the query string, like &#x60;mailto:example@domain.com&#x60;, or in the User-Agent request header, like &#x60;User-Agent: my-app (mailto:example@domain.com)&#x60;. Read more about the polite pool at [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool).
      */
-    public async getFunder (id: string, select?: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FunderSchema;  }> {
+    public async getFunder (id: any, select?: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FunderSchema;  }> {
         const localVarPath = this.basePath + '/funders/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -255,12 +255,13 @@ export class FundersApi {
      * @param perPage 
      * @param sample 
      * @param search 
+     * @param seed 
      * @param select 
      * @param sort 
      * @param userAgent [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool)
      * @param mailto The API is the primary way to get OpenAlex data. It\&#39;s free and requires no authentication. The daily limit for API calls is 100,000 requests per user per day. For best performance, add your email to all API requests The email can be either in the query string, like &#x60;mailto:example@domain.com&#x60;, or in the User-Agent request header, like &#x60;User-Agent: my-app (mailto:example@domain.com)&#x60;. Read more about the polite pool at [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool).
      */
-    public async getFunders (apiKey?: string, cursor?: string, filter?: string, groupBy?: string, page?: number, perPage?: number, sample?: number, search?: string, select?: string, sort?: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FundersArray;  }> {
+    public async getFunders (apiKey?: string, cursor?: string, filter?: string, groupBy?: string, page?: number, perPage?: number, sample?: number, search?: string, seed?: any, select?: string, sort?: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FundersArray;  }> {
         const localVarPath = this.basePath + '/funders';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -303,6 +304,10 @@ export class FundersApi {
 
         if (search !== undefined) {
             localVarQueryParameters['search'] = ObjectSerializer.serialize(search, "string");
+        }
+
+        if (seed !== undefined) {
+            localVarQueryParameters['seed'] = ObjectSerializer.serialize(seed, "any");
         }
 
         if (select !== undefined) {

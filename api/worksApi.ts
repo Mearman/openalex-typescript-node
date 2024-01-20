@@ -16,9 +16,7 @@ import http from 'http';
 
 /* tslint:disable:no-unused-locals */
 import { AutoCompleteResultSchema } from '../model/autoCompleteResultSchema';
-import { BaseSelectionAttributes } from '../model/baseSelectionAttributes';
 import { ErrorMessage } from '../model/errorMessage';
-import { WorkAttributes } from '../model/workAttributes';
 import { WorkNgramsSchema } from '../model/workNgramsSchema';
 import { WorkSchema } from '../model/workSchema';
 import { WorksResponseSchema } from '../model/worksResponseSchema';
@@ -184,7 +182,7 @@ export class WorksApi {
      * @param userAgent [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool)
      * @param mailto The API is the primary way to get OpenAlex data. It\&#39;s free and requires no authentication. The daily limit for API calls is 100,000 requests per user per day. For best performance, add your email to all API requests The email can be either in the query string, like &#x60;mailto:example@domain.com&#x60;, or in the User-Agent request header, like &#x60;User-Agent: my-app (mailto:example@domain.com)&#x60;. Read more about the polite pool at [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool).
      */
-    public async getWork (id: any, select?: Array<WorkAttributes & BaseSelectionAttributes>, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WorkSchema;  }> {
+    public async getWork (id: any, select?: any, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WorkSchema;  }> {
         const localVarPath = this.basePath + '/works/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -204,7 +202,7 @@ export class WorksApi {
         }
 
         if (select !== undefined) {
-            localVarQueryParameters['select'] = ObjectSerializer.serialize(select, "Array<WorkAttributes & BaseSelectionAttributes>");
+            localVarQueryParameters['select'] = ObjectSerializer.serialize(select, "any");
         }
 
         if (mailto !== undefined) {
@@ -264,7 +262,7 @@ export class WorksApi {
      * @param userAgent [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool)
      * @param mailto The API is the primary way to get OpenAlex data. It\&#39;s free and requires no authentication. The daily limit for API calls is 100,000 requests per user per day. For best performance, add your email to all API requests The email can be either in the query string, like &#x60;mailto:example@domain.com&#x60;, or in the User-Agent request header, like &#x60;User-Agent: my-app (mailto:example@domain.com)&#x60;. Read more about the polite pool at [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool).
      */
-    public async getWorkNgrams (id: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WorkNgramsSchema;  }> {
+    public async getWorkNgrams (id: any, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WorkNgramsSchema;  }> {
         const localVarPath = this.basePath + '/works/{id}/ngrams'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -349,7 +347,7 @@ export class WorksApi {
      * @param userAgent [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool)
      * @param mailto The API is the primary way to get OpenAlex data. It\&#39;s free and requires no authentication. The daily limit for API calls is 100,000 requests per user per day. For best performance, add your email to all API requests The email can be either in the query string, like &#x60;mailto:example@domain.com&#x60;, or in the User-Agent request header, like &#x60;User-Agent: my-app (mailto:example@domain.com)&#x60;. Read more about the polite pool at [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool).
      */
-    public async getWorks (apiKey?: string, cursor?: string, filter?: string, groupBy?: string, page?: number, perPage?: number, sample?: number, search?: string, select?: string, sort?: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WorksResponseSchema;  }> {
+    public async getWorks (apiKey?: string, cursor?: string, filter?: any, groupBy?: string, page?: number, perPage?: number, sample?: number, search?: string, select?: string, sort?: string, userAgent?: any, mailto?: any, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WorksResponseSchema;  }> {
         const localVarPath = this.basePath + '/works';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -371,7 +369,7 @@ export class WorksApi {
         }
 
         if (filter !== undefined) {
-            localVarQueryParameters['filter'] = ObjectSerializer.serialize(filter, "string");
+            localVarQueryParameters['filter'] = ObjectSerializer.serialize(filter, "any");
         }
 
         if (groupBy !== undefined) {
