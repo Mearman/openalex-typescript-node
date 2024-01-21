@@ -15,7 +15,6 @@ api/singleApi.ts
 api/sourcesApi.ts
 api/worksApi.ts
 git_push.sh
-model/affiliationsInner.ts
 model/apc.ts
 model/associatedInstitution.ts
 model/author.ts
