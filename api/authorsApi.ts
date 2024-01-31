@@ -369,7 +369,7 @@ export class AuthorsApi {
         });
     }
     /**
-     * Get a single author by id
+     * Get a random author
      * @summary Get Random Author
      * @param select 
      * @param userAgent [docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication#the-polite-pool)
