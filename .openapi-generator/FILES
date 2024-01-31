@@ -11,6 +11,7 @@ api/listApi.ts
 api/ngramsApi.ts
 api/peopleApi.ts
 api/publishersApi.ts
+api/randomApi.ts
 api/singleApi.ts
 api/sourcesApi.ts
 api/worksApi.ts

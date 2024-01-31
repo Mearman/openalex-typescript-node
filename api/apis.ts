@@ -18,6 +18,8 @@ export * from './peopleApi';
 import { PeopleApi } from './peopleApi';
 export * from './publishersApi';
 import { PublishersApi } from './publishersApi';
+export * from './randomApi';
+import { RandomApi } from './randomApi';
 export * from './singleApi';
 import { SingleApi } from './singleApi';
 export * from './sourcesApi';
@@ -35,4 +37,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AuthorsApi, AutocompleteApi, ConceptsApi, FundersApi, InfoApi, InstitutionsApi, ListApi, NgramsApi, PeopleApi, PublishersApi, SingleApi, SourcesApi, WorksApi];
+export const APIS = [AuthorsApi, AutocompleteApi, ConceptsApi, FundersApi, InfoApi, InstitutionsApi, ListApi, NgramsApi, PeopleApi, PublishersApi, RandomApi, SingleApi, SourcesApi, WorksApi];
