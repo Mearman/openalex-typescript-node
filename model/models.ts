@@ -3,23 +3,26 @@ import localVarRequest from 'request';
 export * from './apc';
 export * from './associatedInstitution';
 export * from './author';
-export * from './authorsResponseSchema';
+export * from './authors';
 export * from './autoCompleteResultItem';
 export * from './autoCompleteResultSchema';
 export * from './baseSelectionAttributes';
 export * from './concept';
 export * from './conceptIds';
-export * from './conceptSchema';
-export * from './conceptsResponseSchema';
+export * from './concepts';
 export * from './dehydratedConcept';
 export * from './dehydratedInstitution';
+export * from './domain';
 export * from './errorMessage';
+export * from './field';
+export * from './funder';
 export * from './funderSchema';
 export * from './fundersArray';
 export * from './geo';
 export * from './ids';
+export * from './institution';
 export * from './institutionSchema';
-export * from './institutionsResponseSchema';
+export * from './institutions';
 export * from './internationalDescription';
 export * from './internationalDisplayName';
 export * from './internationalDisplayNameAndDescription';
@@ -28,22 +31,32 @@ export * from './location';
 export * from './locationSource';
 export * from './meta';
 export * from './ngramMeta';
-export * from './personResponseSchema';
+export * from './ngrams';
+export * from './person';
+export * from './publisher';
+export * from './publisherParentPublisher';
 export * from './publisherSchema';
-export * from './publisherSchemaParentPublisher';
-export * from './publishersResponseSchema';
+export * from './publishers';
 export * from './role';
 export * from './rootResponseSchema';
+export * from './source';
 export * from './sourceSchema';
-export * from './sourcesArray';
+export * from './sources';
+export * from './subfield';
 export * from './summaryStats';
+export * from './topic';
+export * from './topicLevelArraySchema';
+export * from './topicLevelSchema';
+export * from './topicLevelSchemaId';
+export * from './topics';
+export * from './topicsMeta';
+export * from './work';
 export * from './workAttributes';
-export * from './workNgramsSchema';
+export * from './workBiblio';
+export * from './workCitedByPercentileYear';
+export * from './workOpenAccess';
 export * from './workSchema';
-export * from './workSchemaBiblio';
-export * from './workSchemaCitedByPercentileYear';
-export * from './workSchemaOpenAccess';
-export * from './worksResponseSchema';
+export * from './worksResponse';
 
 import * as fs from 'fs';
 
@@ -61,23 +74,26 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 import { Apc } from './apc';
 import { AssociatedInstitution } from './associatedInstitution';
 import { Author } from './author';
-import { AuthorsResponseSchema } from './authorsResponseSchema';
+import { Authors } from './authors';
 import { AutoCompleteResultItem } from './autoCompleteResultItem';
 import { AutoCompleteResultSchema } from './autoCompleteResultSchema';
 import { BaseSelectionAttributes } from './baseSelectionAttributes';
 import { Concept } from './concept';
 import { ConceptIds } from './conceptIds';
-import { ConceptSchema } from './conceptSchema';
-import { ConceptsResponseSchema } from './conceptsResponseSchema';
+import { Concepts } from './concepts';
 import { DehydratedConcept } from './dehydratedConcept';
 import { DehydratedInstitution } from './dehydratedInstitution';
+import { Domain } from './domain';
 import { ErrorMessage } from './errorMessage';
+import { Field } from './field';
+import { Funder } from './funder';
 import { FunderSchema } from './funderSchema';
 import { FundersArray } from './fundersArray';
 import { Geo } from './geo';
 import { Ids } from './ids';
+import { Institution } from './institution';
 import { InstitutionSchema } from './institutionSchema';
-import { InstitutionsResponseSchema } from './institutionsResponseSchema';
+import { Institutions } from './institutions';
 import { InternationalDescription } from './internationalDescription';
 import { InternationalDisplayName } from './internationalDisplayName';
 import { InternationalDisplayNameAndDescription } from './internationalDisplayNameAndDescription';
@@ -86,22 +102,32 @@ import { Location } from './location';
 import { LocationSource } from './locationSource';
 import { Meta } from './meta';
 import { NgramMeta } from './ngramMeta';
-import { PersonResponseSchema } from './personResponseSchema';
+import { Ngrams } from './ngrams';
+import { Person } from './person';
+import { Publisher } from './publisher';
+import { PublisherParentPublisher } from './publisherParentPublisher';
 import { PublisherSchema } from './publisherSchema';
-import { PublisherSchemaParentPublisher } from './publisherSchemaParentPublisher';
-import { PublishersResponseSchema } from './publishersResponseSchema';
+import { Publishers } from './publishers';
 import { Role } from './role';
 import { RootResponseSchema } from './rootResponseSchema';
+import { Source } from './source';
 import { SourceSchema } from './sourceSchema';
-import { SourcesArray } from './sourcesArray';
+import { Sources } from './sources';
+import { Subfield } from './subfield';
 import { SummaryStats } from './summaryStats';
+import { Topic } from './topic';
+import { TopicLevelArraySchema } from './topicLevelArraySchema';
+import { TopicLevelSchema } from './topicLevelSchema';
+import { TopicLevelSchemaId } from './topicLevelSchemaId';
+import { Topics } from './topics';
+import { TopicsMeta } from './topicsMeta';
+import { Work } from './work';
 import { WorkAttributes } from './workAttributes';
-import { WorkNgramsSchema } from './workNgramsSchema';
+import { WorkBiblio } from './workBiblio';
+import { WorkCitedByPercentileYear } from './workCitedByPercentileYear';
+import { WorkOpenAccess } from './workOpenAccess';
 import { WorkSchema } from './workSchema';
-import { WorkSchemaBiblio } from './workSchemaBiblio';
-import { WorkSchemaCitedByPercentileYear } from './workSchemaCitedByPercentileYear';
-import { WorkSchemaOpenAccess } from './workSchemaOpenAccess';
-import { WorksResponseSchema } from './worksResponseSchema';
+import { WorksResponse } from './worksResponse';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -122,23 +148,26 @@ let typeMap: {[index: string]: any} = {
     "Apc": Apc,
     "AssociatedInstitution": AssociatedInstitution,
     "Author": Author,
-    "AuthorsResponseSchema": AuthorsResponseSchema,
+    "Authors": Authors,
     "AutoCompleteResultItem": AutoCompleteResultItem,
     "AutoCompleteResultSchema": AutoCompleteResultSchema,
     "BaseSelectionAttributes": BaseSelectionAttributes,
     "Concept": Concept,
     "ConceptIds": ConceptIds,
-    "ConceptSchema": ConceptSchema,
-    "ConceptsResponseSchema": ConceptsResponseSchema,
+    "Concepts": Concepts,
     "DehydratedConcept": DehydratedConcept,
     "DehydratedInstitution": DehydratedInstitution,
+    "Domain": Domain,
     "ErrorMessage": ErrorMessage,
+    "Field": Field,
+    "Funder": Funder,
     "FunderSchema": FunderSchema,
     "FundersArray": FundersArray,
     "Geo": Geo,
     "Ids": Ids,
+    "Institution": Institution,
     "InstitutionSchema": InstitutionSchema,
-    "InstitutionsResponseSchema": InstitutionsResponseSchema,
+    "Institutions": Institutions,
     "InternationalDescription": InternationalDescription,
     "InternationalDisplayName": InternationalDisplayName,
     "InternationalDisplayNameAndDescription": InternationalDisplayNameAndDescription,
@@ -147,22 +176,32 @@ let typeMap: {[index: string]: any} = {
     "LocationSource": LocationSource,
     "Meta": Meta,
     "NgramMeta": NgramMeta,
-    "PersonResponseSchema": PersonResponseSchema,
+    "Ngrams": Ngrams,
+    "Person": Person,
+    "Publisher": Publisher,
+    "PublisherParentPublisher": PublisherParentPublisher,
     "PublisherSchema": PublisherSchema,
-    "PublisherSchemaParentPublisher": PublisherSchemaParentPublisher,
-    "PublishersResponseSchema": PublishersResponseSchema,
+    "Publishers": Publishers,
     "Role": Role,
     "RootResponseSchema": RootResponseSchema,
+    "Source": Source,
     "SourceSchema": SourceSchema,
-    "SourcesArray": SourcesArray,
+    "Sources": Sources,
+    "Subfield": Subfield,
     "SummaryStats": SummaryStats,
+    "Topic": Topic,
+    "TopicLevelArraySchema": TopicLevelArraySchema,
+    "TopicLevelSchema": TopicLevelSchema,
+    "TopicLevelSchemaId": TopicLevelSchemaId,
+    "Topics": Topics,
+    "TopicsMeta": TopicsMeta,
+    "Work": Work,
     "WorkAttributes": WorkAttributes,
-    "WorkNgramsSchema": WorkNgramsSchema,
+    "WorkBiblio": WorkBiblio,
+    "WorkCitedByPercentileYear": WorkCitedByPercentileYear,
+    "WorkOpenAccess": WorkOpenAccess,
     "WorkSchema": WorkSchema,
-    "WorkSchemaBiblio": WorkSchemaBiblio,
-    "WorkSchemaCitedByPercentileYear": WorkSchemaCitedByPercentileYear,
-    "WorkSchemaOpenAccess": WorkSchemaOpenAccess,
-    "WorksResponseSchema": WorksResponseSchema,
+    "WorksResponse": WorksResponse,
 }
 
 export class ObjectSerializer {

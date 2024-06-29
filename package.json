@@ -1,6 +1,6 @@
 {
     "name": "@mearman/openalex-typescript-node",
-    "version": "0.1.0",
+    "version": "0.2.4",
     "description": "NodeJS client for @mearman/openalex-typescript-node",
     "repository": {
         "type": "git",
